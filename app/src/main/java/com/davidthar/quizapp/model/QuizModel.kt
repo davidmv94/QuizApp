@@ -6,7 +6,7 @@ package com.davidthar.quizapp.model
 */
 
 data class QuizModel (val question:String,
-                      val correctAnswer:Int,
                       val answer1:String,
                       val answer2:String,
-                      val answer3:String)
+                      val answer3:String,
+                      val correctAnswer:Int)
