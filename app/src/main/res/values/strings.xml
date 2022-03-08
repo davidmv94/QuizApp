@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Quiz App</string>
+
+    <!--Main Activity-->
+    <string name="play">Jugar</string>
+    <string name="ranking">Ranking</string>
+    <string name="information">Información</string>
+
 </resources>

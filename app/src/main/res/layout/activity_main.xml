@@ -9,6 +9,17 @@
     android:id="@+id/viewContainer"
     tools:context=".view.MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/center_guideline"
         android:layout_width="match_parent"
@@ -17,8 +28,10 @@
         app:layout_constraintGuide_percent="0.5"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/center_guideline"
@@ -27,17 +40,17 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jugar"/>
+            android:id="@+id/btn_play"
+            android:text="@string/play"
+            style="@style/main_activity_buttons" />
         <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ranking"/>
+            android:id="@+id/btn_ranking"
+            android:text="@string/ranking"
+            style="@style/main_activity_buttons" />
         <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="información"/>
+            android:id="@+id/btn_information"
+            android:text="@string/information"
+            style="@style/main_activity_buttons" />
     </LinearLayout>
 
     <TextView
