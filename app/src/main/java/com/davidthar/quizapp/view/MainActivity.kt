@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        quizViewModel.quizModel.observe(this, Observer {
+        /*quizViewModel.quizModel.observe(this, Observer {
             binding.tvQuestion.text = it.question
             binding.tvAnswer1.text = it.answer1
             binding.tvAnswer2.text = it.answer2
@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity() {
             binding.tvCorrectAnswer.text = it.correctAnswer.toString()
         })
 
-        quizViewModel.randomQuestion()
+        binding.viewContainer.setOnClickListener {
+            quizViewModel.randomQuestion()
+        }
+
+         */
     }
 }

@@ -9,7 +9,8 @@ class QuizProvider {
     companion object{
 
         fun random(): QuizModel {
-            return questions[0]
+            val position = (0..29).random()
+            return questions[position]
         }
 
         private val questions = listOf(
