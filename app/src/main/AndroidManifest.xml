@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApp">
         <activity
+            android:name=".view.QuizActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".view.RankingActivity"
-            android:screenOrientation="portrait"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.InfoActivity"
             android:exported="true"

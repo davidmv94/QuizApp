@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
 
+        binding.btnPlay.setOnClickListener {
+            val intent = Intent(this,QuizActivity::class.java)
+            startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+        }
+
         /*quizViewModel.quizModel.observe(this, Observer {
             binding.tvQuestion.text = it.question
             binding.tvAnswer1.text = it.answer1

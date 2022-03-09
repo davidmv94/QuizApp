@@ -13,7 +13,7 @@
     <style name="ranking_number">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#A88256</item>
+        <item name="android:textColor">@color/text_color2</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
     </style>
@@ -21,7 +21,7 @@
     <style name="ranking_names">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#A88256</item>
+        <item name="android:textColor">@color/text_color2</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:text">@string/placeholder_name</item>
@@ -30,10 +30,17 @@
     <style name="ranking_points">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#A88256</item>
+        <item name="android:textColor">@color/text_color2</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:text">@string/placeholder_points</item>
+    </style>
+
+    <style name="button_back" parent="main_activity_buttons">
+        <item name="android:layout_marginStart">80dp</item>
+        <item name="android:layout_marginEnd">80dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:backgroundTint">@color/background_dark</item>
     </style>
 
 </resources>

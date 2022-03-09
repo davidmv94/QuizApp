@@ -80,13 +80,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_back"
         android:text="@string/volver"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/background_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/main_activity_buttons" />
+        style="@style/button_back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

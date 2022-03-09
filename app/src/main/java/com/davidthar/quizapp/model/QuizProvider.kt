@@ -220,7 +220,7 @@ class QuizProvider {
                 correctAnswer = 2
             ),
             QuizModel(
-                question = "A quien deja Dumbledore en herencia el desiluminador?",
+                question = "A quién deja Dumbledore en herencia el desiluminador?",
                 answer1 = "Ron Weasley",
                 answer2 = "Harry Potter",
                 answer3 = "Hermione Granger",
