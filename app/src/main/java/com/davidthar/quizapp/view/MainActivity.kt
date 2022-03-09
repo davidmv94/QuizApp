@@ -1,5 +1,7 @@
 package com.davidthar.quizapp.view
 
+import android.app.ActivityOptions
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -17,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnInformation.setOnClickListener {
+            val intent = Intent(this,InfoActivity::class.java)
+            startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+        }
 
         /*quizViewModel.quizModel.observe(this, Observer {
             binding.tvQuestion.text = it.question

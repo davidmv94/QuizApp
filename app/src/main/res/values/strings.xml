@@ -5,5 +5,17 @@
     <string name="play">Jugar</string>
     <string name="ranking">Ranking</string>
     <string name="information">Información</string>
+    <string name="davidthar">davidthar</string>
 
+    <!--Info Activity-->
+    <string name="volver">Volver</string>
+    <string name="app_info">Aplicación #3 desarrollada por @DavidThar para el reto mensual de aplicaciones organizado por MoureDev</string>
+
+    <!-- Content Descriptions-->
+    <string name="harry_potter_logo">Harry Potter Logo</string>
+    <string name="github_mouredev">Github MoureDev</string>
+    <string name="github_logo">Github Logo</string>
+    <string name="twitter_logo">Twitter Logo</string>
+
+    <!---->
 </resources>

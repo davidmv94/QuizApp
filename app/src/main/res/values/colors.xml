@@ -11,4 +11,5 @@
     
     <color name="background_soft">#edcfa1</color>
     <color name="background_dark">#dfc095</color>
+    <color name="text_color">#c8a781</color>
 </resources>

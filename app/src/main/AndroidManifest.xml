@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApp">
         <activity
+            android:name=".view.InfoActivity"
+            android:screenOrientation="portrait"
+            android:exported="true" />
+        <activity
             android:name=".view.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
