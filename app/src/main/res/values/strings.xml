@@ -11,11 +11,28 @@
     <string name="volver">Volver</string>
     <string name="app_info">Aplicación #3 desarrollada por @DavidThar para el reto mensual de aplicaciones organizado por MoureDev</string>
 
+    <!--Ranking Activity-->
+    <string name="_1">1.</string>
+    <string name="_2">2.</string>
+    <string name="_3">3.</string>
+    <string name="_4">4.</string>
+    <string name="_5">5.</string>
+    <string name="_6">6.</string>
+    <string name="_7">7.</string>
+    <string name="_8">8.</string>
+    <string name="_9">9.</string>
+    <string name="_10">10.</string>
+    <string name="placeholder_name">Placeholder Name</string>
+    <string name="placeholder_points">000</string>
+
+
     <!-- Content Descriptions-->
     <string name="harry_potter_logo">Harry Potter Logo</string>
     <string name="github_mouredev">Github MoureDev</string>
     <string name="github_logo">Github Logo</string>
     <string name="twitter_logo">Twitter Logo</string>
+
+
 
     <!---->
 </resources>
