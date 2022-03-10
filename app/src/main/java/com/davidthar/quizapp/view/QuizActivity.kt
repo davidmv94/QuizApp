@@ -2,6 +2,8 @@ package com.davidthar.quizapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.view.View
 import com.davidthar.quizapp.R
 import com.davidthar.quizapp.databinding.ActivityQuizBinding
 import androidx.activity.viewModels
@@ -10,6 +12,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.davidthar.quizapp.viewmodel.QuizViewModel
+import java.text.DecimalFormat
+import java.text.NumberFormat
 import kotlin.random.Random
 
 
@@ -19,6 +23,7 @@ class QuizActivity : AppCompatActivity() {
     private val quizViewModel : QuizViewModel by viewModels()
     private var questionNumber = 0
     private var correctAnswer = 0
+    private lateinit var timer : CountDownTimer
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,10 +50,10 @@ class QuizActivity : AppCompatActivity() {
         quizViewModel.setQuestion(randomSet)
         questionNumber++
 
+        setCountDown()
 
-        binding.placeholderTimer.setOnClickListener {
-            quizViewModel.setQuestion(randomSet)
-        }
+
+
 
         binding.btnBack.setOnClickListener {
             this.onBackPressed()
@@ -63,5 +68,21 @@ class QuizActivity : AppCompatActivity() {
             s += Random.nextInt(0,30)
         }
         return  s
+    }
+
+    private fun setCountDown(){
+
+        timer = object : CountDownTimer(31000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                val f: NumberFormat = DecimalFormat("00")
+                val sec = millisUntilFinished / 1000 % 60
+                binding.tvTimer.text = f.format(sec)
+            }
+
+            override fun onFinish() {
+                //Set on finish
+            }
+        }
+        timer.start()
     }
 }

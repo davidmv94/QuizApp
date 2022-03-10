@@ -20,12 +20,15 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"/>
 
-    <ImageView
-        android:id="@+id/placeholderTimer"
+    <TextView
+        android:id="@+id/tvTimer"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
-        android:background="@color/background_dark"
+        android:text="30"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:textColor="@color/text_color2"
         app:layout_constraintTop_toBottomOf="@id/ivImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -42,7 +45,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/placeholderTimer"
+        app:layout_constraintTop_toBottomOf="@id/tvTimer"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
