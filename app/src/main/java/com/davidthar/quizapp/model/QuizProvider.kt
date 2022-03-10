@@ -1,5 +1,6 @@
 package com.davidthar.quizapp.model
 
+
 /*
 ** Coded by David Montes on 08/03/2022.
 ** https://github.com/davidthar
@@ -8,9 +9,12 @@ package com.davidthar.quizapp.model
 class QuizProvider {
     companion object{
 
-        fun random(): QuizModel {
-            val position = (0..29).random()
-            return questions[position]
+        fun createQuestionList(randomSet : HashSet<Int>): List<QuizModel>{
+            val randomQuestionList = mutableListOf<QuizModel>()
+            randomSet.forEach{
+                randomQuestionList.add(questions[it])
+            }
+            return randomQuestionList
         }
 
         private val questions = listOf(

@@ -10,10 +10,15 @@ import com.davidthar.quizapp.model.QuizProvider
 ** https://github.com/davidthar
 */
 
+
 class QuizViewModel : ViewModel() {
     val quizModel = MutableLiveData<QuizModel>()
+    var questionNumber = 0
 
-    fun randomQuestion(){
-        quizModel.postValue(QuizProvider.random())
+    fun setQuestion(randomSet : HashSet<Int>){
+        val randomQuestionList = QuizProvider.createQuestionList(randomSet)
+
+        quizModel.postValue(randomQuestionList[questionNumber])
+        questionNumber++
     }
 }

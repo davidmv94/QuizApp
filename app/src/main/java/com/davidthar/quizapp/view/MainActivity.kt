@@ -5,8 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import com.davidthar.quizapp.R
 import com.davidthar.quizapp.databinding.ActivityMainBinding
 import com.davidthar.quizapp.viewmodel.QuizViewModel
 
