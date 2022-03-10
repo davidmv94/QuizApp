@@ -21,9 +21,11 @@ class QuizActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityQuizBinding
     private val quizViewModel : QuizViewModel by viewModels()
-    private var questionNumber = 0
+
     private var correctAnswer = 0
     private lateinit var timer : CountDownTimer
+    private lateinit var randomSet : HashSet<Int>
+    private var totalPoints = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +34,7 @@ class QuizActivity : AppCompatActivity() {
         binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val randomSet = createRandomArray()
+        randomSet = createRandomArray()
 
         quizViewModel.quizModel.observe(this, Observer {
             //Load Image
@@ -46,11 +48,14 @@ class QuizActivity : AppCompatActivity() {
             correctAnswer = it.correctAnswer
         })
 
-        //Set first question
+        //Set first question and Countdown
         quizViewModel.setQuestion(randomSet)
-        questionNumber++
-
         setCountDown()
+
+        binding.tvTimer.setOnClickListener{
+            quizViewModel.setQuestion(randomSet)
+            setCountDown()
+        }
 
 
 
@@ -77,6 +82,15 @@ class QuizActivity : AppCompatActivity() {
                 val f: NumberFormat = DecimalFormat("00")
                 val sec = millisUntilFinished / 1000 % 60
                 binding.tvTimer.text = f.format(sec)
+                binding.tvTimer.setOnClickListener{
+                    timer.cancel()
+
+                    totalPoints += f.format(sec).toInt()
+                    println(totalPoints)
+
+                    quizViewModel.setQuestion(randomSet)
+                    setCountDown()
+                }
             }
 
             override fun onFinish() {
