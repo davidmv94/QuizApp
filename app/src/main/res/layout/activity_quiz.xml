@@ -11,7 +11,6 @@
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:src="@drawable/cartaharry"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,6 +31,22 @@
         app:layout_constraintTop_toBottomOf="@id/ivImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarCircle"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:indeterminate="false"
+        android:layoutDirection="rtl"
+        android:max="30"
+        android:progress="30"
+        android:rotation="90"
+        android:progressDrawable="@drawable/drawable_circle"
+        app:layout_constraintTop_toTopOf="@id/tvTimer"
+        app:layout_constraintBottom_toBottomOf="@id/tvTimer"
+        app:layout_constraintStart_toStartOf="@id/tvTimer"
+        app:layout_constraintEnd_toEndOf="@id/tvTimer"/>
 
     <TextView
         android:id="@+id/tvQuestion"

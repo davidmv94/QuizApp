@@ -36,6 +36,9 @@ class QuizActivity : AppCompatActivity() {
 
         randomSet = createRandomArray()
 
+
+
+
         quizViewModel.quizModel.observe(this, Observer {
             //Load Image
             val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -82,6 +85,7 @@ class QuizActivity : AppCompatActivity() {
                 val f: NumberFormat = DecimalFormat("00")
                 val sec = millisUntilFinished / 1000 % 60
                 binding.tvTimer.text = f.format(sec)
+                binding.progressBarCircle.progress = f.format(sec).toInt()
                 binding.tvTimer.setOnClickListener{
                     timer.cancel()
 
