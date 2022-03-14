@@ -1,6 +1,7 @@
 # Harry Potter Quiz App
 Aplicacion #3 para el reto mensual de aplicaciones organizado por [MoureDev](https://github.com/mouredev)
 
+[![Potter](https://raw.githubusercontent.com/davidthar/davidthar/main/portfolio_potter_small.png)](https://github.com/davidthar/QuizApp)
 
 
 ## Descarga de la aplicación
@@ -8,9 +9,8 @@ Puedes descargar la aplicación en formato .apk desde ------------
 
 ## Información sobre el reto
 * Puedes encontrar más información sobre el reto [aquí](https://github.com/mouredev/Monthly-App-Challenge-2022)
-**CUESTIONARIO CONTRARRELOJ:** Crea una "Quiz app" contrareloj con ranking. 
 
-Requisitos:
+## Requisitos:
 
 * El diseño es de libre elección.
 * La temática de las preguntas del cuestionario será de libre elección. Puede estar bien seguir un mismo tema (por ejemplo, preguntas sobre el universo "Harry Potter").
