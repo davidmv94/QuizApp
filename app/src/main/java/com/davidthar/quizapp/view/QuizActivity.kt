@@ -3,7 +3,6 @@ package com.davidthar.quizapp.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.View
 import com.davidthar.quizapp.R
 import com.davidthar.quizapp.databinding.ActivityQuizBinding
 import androidx.activity.viewModels
@@ -36,14 +35,13 @@ class QuizActivity : AppCompatActivity() {
 
         randomSet = createRandomArray()
 
-
-
-
         quizViewModel.quizModel.observe(this, Observer {
+
             //Load Image
             val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
             Glide.with(this).load(it.url).apply(requestOptions).into(binding.ivImage)
 
+            //Load Question and answers
             binding.tvQuestion.text = it.question
             binding.btnAnswer1.text = it.answer1
             binding.btnAnswer2.text = it.answer2
@@ -59,9 +57,6 @@ class QuizActivity : AppCompatActivity() {
             quizViewModel.setQuestion(randomSet)
             setCountDown()
         }
-
-
-
 
         binding.btnBack.setOnClickListener {
             this.onBackPressed()

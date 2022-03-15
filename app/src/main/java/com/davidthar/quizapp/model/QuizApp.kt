@@ -1,11 +1,10 @@
-package com.davidthar.quizapp
+package com.davidthar.quizapp.model
 
 import android.app.Application
 import androidx.room.Room
-import com.davidthar.quizapp.database.RankingDatabase
-import com.davidthar.quizapp.database.RankingEntity
+import com.davidthar.quizapp.model.database.RankingDatabase
+import com.davidthar.quizapp.model.database.RankingEntity
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 /*
 ** Coded by David Montes on 15/03/2022.

@@ -2,10 +2,8 @@ package com.davidthar.quizapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.davidthar.quizapp.QuizApp
-import com.davidthar.quizapp.R
-import com.davidthar.quizapp.database.RankingEntity
-import com.davidthar.quizapp.databinding.ActivityInfoBinding
+import com.davidthar.quizapp.model.QuizApp
+import com.davidthar.quizapp.model.database.RankingEntity
 import com.davidthar.quizapp.databinding.ActivityRankingBinding
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

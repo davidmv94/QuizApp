@@ -1,4 +1,4 @@
-package com.davidthar.quizapp.database
+package com.davidthar.quizapp.model.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

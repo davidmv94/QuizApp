@@ -4,13 +4,7 @@ import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
-import com.davidthar.quizapp.QuizApp
-import com.davidthar.quizapp.QuizApp.Companion.database
-import com.davidthar.quizapp.database.RankingEntity
 import com.davidthar.quizapp.databinding.ActivityMainBinding
-import com.davidthar.quizapp.viewmodel.QuizViewModel
-import org.jetbrains.anko.doAsync
 
 class MainActivity : AppCompatActivity() {
 
