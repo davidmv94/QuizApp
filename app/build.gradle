@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -58,5 +59,11 @@ dependencies {
 
     //Timber Countdown
     implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    //Room
+    implementation 'org.jetbrains.anko:anko-common:0.9'
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
 
 }
