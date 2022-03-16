@@ -50,7 +50,7 @@ class RankingActivity : AppCompatActivity() {
 
 
 
-            }
+        }
 
 
         binding.btnBack.setOnClickListener {

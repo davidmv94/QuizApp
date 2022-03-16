@@ -43,8 +43,9 @@
             android:textColorHint="@color/text_color"
             android:textCursorDrawable="@null"
             android:backgroundTint="@color/text_color"
+            android:gravity="center"
             android:singleLine="true"
-            android:maxLength="20"/>
+            android:maxLength="14"/>
 
         <ImageButton
             android:id="@+id/buttonRaking"
