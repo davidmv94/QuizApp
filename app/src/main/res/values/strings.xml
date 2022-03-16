@@ -32,6 +32,8 @@
     <string name="github_logo">Github Logo</string>
     <string name="twitter_logo">Twitter Logo</string>
     <string name="quiz_image">quiz_image</string>
+    <string name="your_score">Tu puntuación</string>
+    <string name="your_name">Escribe tu nombre...</string>
 
 
     <!---->
