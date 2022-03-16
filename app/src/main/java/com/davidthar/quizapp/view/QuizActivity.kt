@@ -84,7 +84,6 @@ class QuizActivity : AppCompatActivity() {
                     timer.cancel()
 
                     totalPoints += f.format(sec).toInt()
-                    println(totalPoints)
 
                     if(questionNumber == 10){
                         startScoreActivity()
@@ -105,6 +104,7 @@ class QuizActivity : AppCompatActivity() {
 
     private fun startScoreActivity(){
             val intent = Intent(this,ScoreActivity::class.java)
+            intent.putExtra("points",totalPoints)
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
     }
 }
