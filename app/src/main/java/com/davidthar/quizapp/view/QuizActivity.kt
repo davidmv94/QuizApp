@@ -1,5 +1,7 @@
 package com.davidthar.quizapp.view
 
+import android.app.ActivityOptions
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -24,6 +26,8 @@ class QuizActivity : AppCompatActivity() {
     private var correctAnswer = 0
     private lateinit var timer : CountDownTimer
     private lateinit var randomSet : HashSet<Int>
+
+    private var questionNumber = 1
     private var totalPoints = 0
 
 
@@ -52,11 +56,6 @@ class QuizActivity : AppCompatActivity() {
         //Set first question and Countdown
         quizViewModel.setQuestion(randomSet)
         setCountDown()
-
-        binding.tvTimer.setOnClickListener{
-            quizViewModel.setQuestion(randomSet)
-            setCountDown()
-        }
 
         binding.btnBack.setOnClickListener {
             this.onBackPressed()
@@ -87,8 +86,13 @@ class QuizActivity : AppCompatActivity() {
                     totalPoints += f.format(sec).toInt()
                     println(totalPoints)
 
-                    quizViewModel.setQuestion(randomSet)
-                    setCountDown()
+                    if(questionNumber == 10){
+                        startScoreActivity()
+                    }else{
+                        quizViewModel.setQuestion(randomSet)
+                        setCountDown()
+                        questionNumber++
+                    }
                 }
             }
 
@@ -97,5 +101,10 @@ class QuizActivity : AppCompatActivity() {
             }
         }
         timer.start()
+    }
+
+    private fun startScoreActivity(){
+            val intent = Intent(this,ScoreActivity::class.java)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
     }
 }
