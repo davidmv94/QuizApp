@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_soft"
+    android:background="@drawable/background2"
     tools:context=".view.RankingActivity">
 
     <ImageView
         android:id="@+id/ivLogoPotter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo2"
+        android:src="@drawable/logo3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

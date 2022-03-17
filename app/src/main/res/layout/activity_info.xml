@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_soft"
+    android:background="@drawable/background2"
     tools:context=".view.InfoActivity">
 
     <ImageView
         android:id="@+id/ivLogoPotter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo2"
+        android:src="@drawable/logo3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,14 +36,14 @@
             android:layout_height="50dp"
             android:layout_marginEnd="10dp"
             android:src="@drawable/github_icon"
-            app:tint="@color/text_color"
+            app:tint="@color/text_color_darker"
             android:contentDescription="@string/github_logo" />
         <ImageView
             android:id="@+id/iv_twitter"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/twitter_icon"
-            app:tint="@color/text_color"
+            app:tint="@color/text_color_darker"
             android:contentDescription="@string/twitter_logo" />
     </LinearLayout>
 
@@ -55,7 +55,7 @@
         app:layout_constraintBottom_toTopOf="@+id/moureGit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/text_color"
+        android:textColor="@color/text_color_darker"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"

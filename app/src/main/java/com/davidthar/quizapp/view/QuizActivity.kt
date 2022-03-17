@@ -160,7 +160,7 @@ class QuizActivity : AppCompatActivity() {
 
     private fun Button.clear(){
         this.setBackgroundColor(resources.getColor(R.color.background_dark))
-        this.setTextColor(resources.getColor(R.color.text_color2))
+        this.setTextColor(resources.getColor(R.color.text_color_darker))
     }
 
     override fun onBackPressed() {

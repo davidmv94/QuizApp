@@ -5,7 +5,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:backgroundTint">@color/background_soft</item>
-        <item name="android:textColor">@color/text_color2</item>
+        <item name="android:textColor">@color/text_color_darker</item>
         <item name="strokeWidth">1dp</item>
         <item name="cornerRadius">10dp</item>
         <item name="strokeColor">@color/white</item>
@@ -14,7 +14,7 @@
     <style name="ranking_number">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/text_color2</item>
+        <item name="android:textColor">@color/text_color_darker</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
     </style>
@@ -22,7 +22,7 @@
     <style name="ranking_names">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/text_color2</item>
+        <item name="android:textColor">@color/text_color_darker</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:text">@string/placeholder_name</item>
@@ -31,7 +31,7 @@
     <style name="ranking_points">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/text_color2</item>
+        <item name="android:textColor">@color/text_color_darker</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:text">@string/placeholder_points</item>
