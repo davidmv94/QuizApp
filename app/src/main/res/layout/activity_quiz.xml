@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_soft"
+    android:background="@drawable/background2"
     tools:context=".view.QuizActivity">
 
     <ImageView
@@ -76,6 +76,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAnswer1"
+            android:tag="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -90,6 +91,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAnswer2"
+            android:tag="2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -104,6 +106,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAnswer3"
+            android:tag="3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
@@ -131,6 +134,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/button_back" />
+        style="@style/button_back"
+        android:textColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

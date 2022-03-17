@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundmain"
+    android:background="@drawable/backgroundmain2"
     android:orientation="vertical"
     android:id="@+id/viewContainer"
     tools:context=".view.MainActivity">
@@ -13,7 +13,7 @@
         android:id="@+id/ivLogoPotter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo2"
+        android:src="@drawable/logo3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +48,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_ranking"
             android:text="@string/ranking"
-            style="@style/main_activity_buttons" />
+            style="@style/main_activity_buttons"/>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_information"
             android:text="@string/information"

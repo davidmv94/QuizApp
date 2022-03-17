@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initButtons()
+    }
+
+    private fun initButtons() {
         binding.btnInformation.setOnClickListener {
             val intent = Intent(this,InfoActivity::class.java)
             startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
@@ -30,4 +34,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
         }
     }
+
+    //Deactivate back on this Activity
+    override fun onBackPressed() {}
 }

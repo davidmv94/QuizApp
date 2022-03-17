@@ -13,6 +13,7 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 private lateinit var binding : ActivityScoreBinding
+private var points = 0
 
 class ScoreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +25,11 @@ class ScoreActivity : AppCompatActivity() {
         val points = bundle?.getInt("points")
 
         binding.tvScore.text = points.toString()
+        initButton()
+    }
 
-        binding.buttonRaking.setOnClickListener{
+    private fun initButton() {
+        binding.buttonRanking.setOnClickListener{
             if (binding.etRankingName.text.isNotEmpty()){
                 doAsync {
                     QuizApp.database.rankingDao().addToRanking(
@@ -45,4 +49,7 @@ class ScoreActivity : AppCompatActivity() {
         val intent = Intent(this,RankingActivity::class.java)
         startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
     }
+
+    //Deactivate Back at this Activity
+    override fun onBackPressed() {}
 }

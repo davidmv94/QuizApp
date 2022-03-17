@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/your_name"
-            android:textColor="@color/text_color"
+            android:textColor="@color/text_color2"
             android:textColorHint="@color/text_color"
             android:textCursorDrawable="@null"
             android:backgroundTint="@color/text_color"
@@ -48,7 +48,7 @@
             android:maxLength="14"/>
 
         <ImageButton
-            android:id="@+id/buttonRaking"
+            android:id="@+id/buttonRanking"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="20dp"

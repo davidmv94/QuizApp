@@ -13,4 +13,8 @@
     <color name="background_dark">#dfc095</color>
     <color name="text_color">#c8a781</color>
     <color name="text_color2">#A88256</color>
+
+    <!-- Answer colors -->
+    <color name="green_color">#43A047</color>
+    <color name="red_color">#E53935</color>
 </resources>
