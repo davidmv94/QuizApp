@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
+    android:background="@drawable/background"
     tools:context=".view.QuizActivity">
 
     <ImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
         android:layout_height="180dp"
+        tools:background="@color/text_color_darker"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +25,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
-        android:text="30"
+        tools:text="30"
         android:gravity="center"
         android:textSize="35sp"
         android:textColor="@color/text_color_darker"
@@ -54,7 +55,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/text_color_darker"
         android:layout_marginTop="20dp"
-        android:text="A quién deja Dumbledore en herencia el desiluminador?"
+        tools:text="A quién deja Dumbledore en herencia el desiluminador?"
         android:textStyle="bold"
         android:textSize="22sp"
         android:layout_marginStart="20dp"
@@ -77,56 +78,31 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAnswer1"
             android:tag="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/background_dark"
             app:cornerRadius="5dp"
             app:strokeWidth="2dp"
             app:strokeColor="#A58C6A"
-            android:textColor="@color/text_color_darker"
-            android:text="Ron Weasley"/>
+            tools:text="Ron Weasley"
+            style="@style/button_answers" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAnswer2"
             android:tag="2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/background_dark"
             app:cornerRadius="5dp"
             app:strokeWidth="2dp"
             app:strokeColor="#A58C6A"
-            android:textColor="@color/text_color_darker"
-            android:text="Harry Potter"/>
+            tools:text="Harry Potter"
+            style="@style/button_answers" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAnswer3"
             android:tag="3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/background_dark"
             app:cornerRadius="5dp"
             app:strokeWidth="2dp"
             app:strokeColor="#A58C6A"
-            android:textColor="@color/text_color_darker"
-            android:text="Hermione Granger"/>
-
+            tools:text="Hermione Granger"
+            style="@style/button_answers" />
 
     </LinearLayout>
-
-
-
-
-
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_back"
@@ -134,7 +110,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/button_back"
-        android:textColor="@color/white"/>
+        style="@style/button_back"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,23 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundmain2"
+    android:background="@drawable/background_main"
     android:orientation="vertical"
     android:id="@+id/viewContainer"
     tools:context=".view.MainActivity">
 
     <ImageView
         android:id="@+id/ivLogoPotter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo3"
+        android:src="@drawable/logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/harry_potter_logo"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"/>
+        style="@style/app_logo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/center_guideline"
@@ -34,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="80dp"
+        app:layout_constraintVertical_bias="0.6"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/center_guideline"
@@ -56,16 +52,11 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/davidthar"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#FDEBCF"
-        android:layout_marginBottom="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/davidthar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

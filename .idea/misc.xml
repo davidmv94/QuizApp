@@ -7,8 +7,9 @@
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable-v24/drawable_circle_dark_blue.xml" value="0.20925925925925926" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable-v24/drawable_circle_yellow.xml" value="0.20925925925925926" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable-v24/splashscreen.xml" value="0.2564814814814815" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable/image_border.xml" value="0.325" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_info.xml" value="0.33" />
-        <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_quiz.xml" value="0.33" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_ranking.xml" value="0.36354166666666665" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_score.xml" value="0.1" />
