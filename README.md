@@ -1,7 +1,7 @@
 # Harry Potter Quiz App
 Aplicacion #3 para el reto mensual de aplicaciones organizado por [MoureDev](https://github.com/mouredev)
 
-[![Potter](https://raw.githubusercontent.com/davidthar/davidthar/main/portfolio_potter_small.png)](https://github.com/davidthar/QuizApp)
+[![Potter](https://raw.githubusercontent.com/davidthar/QuizApp/master/github_banner.png)](https://github.com/davidthar/QuizApp)
 
 
 ## Descarga de la aplicación
