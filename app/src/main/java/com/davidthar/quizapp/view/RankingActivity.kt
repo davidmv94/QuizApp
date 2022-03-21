@@ -5,57 +5,47 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.davidthar.quizapp.model.QuizApp
 import com.davidthar.quizapp.model.database.RankingEntity
 import com.davidthar.quizapp.databinding.ActivityRankingBinding
+import com.davidthar.quizapp.model.RecyclerAdapter
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 private lateinit var binding : ActivityRankingBinding
-private lateinit var rankingNames : Array<TextView>
-private lateinit var rankingPoints : Array<TextView>
+private lateinit var recyclerView : RecyclerView
+private lateinit var ranking : MutableList<RankingEntity>
 
 class RankingActivity : AppCompatActivity() {
+
+    private val recyclerAdapter = RecyclerAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRankingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        getRanking()
+        setUpRecyclerView()
         initBackButton()
-        setRankingArrays()
-        showRanking()
     }
 
-    private fun showRanking() {
-        var ranking : MutableList<RankingEntity>
+    private fun setUpRecyclerView(){
 
+        recyclerView = binding.rvRanking
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerAdapter.RecyclerAdapter(ranking, this)
+        recyclerView.adapter = recyclerAdapter
+    }
+
+    private fun getRanking(){
         doAsync {
             ranking = QuizApp.database.rankingDao().getTenRanking()
-
-            uiThread {
-                var indexNames = 0
-                rankingNames.forEach {
-                    it.text = ranking[indexNames].name
-                    indexNames++
-                }
-
-                var indexPoints = 0
-                rankingPoints.forEach {
-                    it.text = ranking[indexPoints].points.toString()
-                    indexPoints++
-                }
-            }
+            println(ranking.toString())
         }
-    }
-
-    private fun setRankingArrays() {
-        rankingNames = arrayOf(
-            binding.tvRankingName1,binding.tvRankingName2,binding.tvRankingName3,binding.tvRankingName4,binding.tvRankingName5,
-            binding.tvRankingName6,binding.tvRankingName7,binding.tvRankingName8,binding.tvRankingName9,binding.tvRankingName10)
-
-        rankingPoints = arrayOf(
-            binding.tvRankingPoints1,binding.tvRankingPoints2,binding.tvRankingPoints3,binding.tvRankingPoints4,binding.tvRankingPoints5,
-            binding.tvRankingPoints6,binding.tvRankingPoints7,binding.tvRankingPoints8,binding.tvRankingPoints9,binding.tvRankingPoints10)
     }
 
     private fun initBackButton() {

@@ -6,13 +6,21 @@
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable-v24/drawable_circle.xml" value="0.22083333333333333" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable-v24/drawable_circle_dark_blue.xml" value="0.20925925925925926" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable-v24/drawable_circle_yellow.xml" value="0.20925925925925926" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable-v24/ranking_round.xml" value="0.3796875" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable-v24/splashscreen.xml" value="0.2564814814814815" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable/image_border.xml" value="0.325" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable/oval_ranking.xml" value="0.37222222222222223" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable/oval_ranking_bronze.xml" value="0.1824074074074074" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable/oval_ranking_gold.xml" value="0.1824074074074074" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable/oval_ranking_silver.xml" value="0.1824074074074074" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/drawable/shadow_oval_dark.xml" value="0.37384615384615383" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_info.xml" value="0.33" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_quiz.xml" value="0.33" />
-        <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_ranking.xml" value="0.36354166666666665" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_ranking.xml" value="0.2729591836734694" />
         <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/activity_score.xml" value="0.1" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/ranking_item.xml" value="0.33" />
+        <entry key="..\:/GitHub/QuizApp/app/src/main/res/layout/search_item.xml" value="0.36354166666666665" />
       </map>
     </option>
   </component>

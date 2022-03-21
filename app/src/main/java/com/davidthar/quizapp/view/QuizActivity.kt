@@ -132,12 +132,13 @@ class QuizActivity : AppCompatActivity() {
                     setCountDown()
                     questionNumber++
                 }
-            },2000)
+            },1000)
     }
 
     private fun startScoreActivity(){
             val intent = Intent(this,ScoreActivity::class.java)
             intent.putExtra("points",totalPoints)
+            println("Nuevo intent con $totalPoints puntos")
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
     }
 
@@ -145,6 +146,7 @@ class QuizActivity : AppCompatActivity() {
         this.setBackgroundColor(resources.getColor(R.color.green_color))
         this.setTextColor(resources.getColor(R.color.white))
         totalPoints += binding.tvTimer.text.toString().toInt()
+        println("Puntos totales: $totalPoints")
     }
 
     private fun Button.incorrect(){

@@ -22,7 +22,7 @@ class ScoreActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val bundle = intent.extras
-        val points = bundle?.getInt("points")
+        points = bundle?.getInt("points")!!
 
         binding.tvScore.text = points.toString()
         initButton()
@@ -33,9 +33,10 @@ class ScoreActivity : AppCompatActivity() {
             if (binding.etRankingName.text.isNotEmpty()){
                 doAsync {
                     QuizApp.database.rankingDao().addToRanking(
-                        RankingEntity(name = binding.etRankingName.text.toString(),points = points!!))
+                        RankingEntity(name = binding.etRankingName.text.toString(),points = points))
 
                     uiThread {
+                        println("Añadido: ${binding.etRankingName.text.toString()} con $points puntos")
                         startRankingActivity()
                     }
                 }
