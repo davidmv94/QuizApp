@@ -21,9 +21,7 @@ class QuizViewModel : ViewModel() {
 
     fun setQuestion(randomSet : HashSet<Int>){
 
-
         val randomQuestionList = QuizProvider.createQuestionList(randomSet)
-
         quizModel.postValue(randomQuestionList[questionNumber])
         questionNumber++
     }

@@ -5,12 +5,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.davidthar.quizapp.model.QuizApp
 import com.davidthar.quizapp.model.database.RankingEntity
 import com.davidthar.quizapp.databinding.ActivityRankingBinding
 import com.davidthar.quizapp.model.RecyclerAdapter
+import com.davidthar.quizapp.model.changeActivity
+import com.davidthar.quizapp.viewmodel.RankingViewModel
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
@@ -20,6 +23,8 @@ private lateinit var ranking : MutableList<RankingEntity>
 
 class RankingActivity : AppCompatActivity() {
 
+    private val rankingViewModel : RankingViewModel by viewModels()
+
     private val recyclerAdapter = RecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +32,7 @@ class RankingActivity : AppCompatActivity() {
         binding = ActivityRankingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getRanking()
+        ranking = rankingViewModel.getRanking()
         setUpRecyclerView()
         initBackButton()
     }
@@ -44,18 +49,14 @@ class RankingActivity : AppCompatActivity() {
     private fun getRanking(){
         doAsync {
             ranking = QuizApp.database.rankingDao().getTenRanking()
-            println(ranking.toString())
         }
     }
 
     private fun initBackButton() {
-        binding.btnBack.setOnClickListener {
-            this.onBackPressed()
-        }
+        binding.btnBack.setOnClickListener { this.onBackPressed() }
     }
 
     override fun onBackPressed() {
-        val intent = Intent(this,MainActivity::class.java)
-        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+        changeActivity(MainActivity())
     }
 }

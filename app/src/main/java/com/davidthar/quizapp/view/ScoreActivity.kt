@@ -4,18 +4,21 @@ import android.app.ActivityOptions
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.davidthar.quizapp.R
+import android.os.Handler
+import android.os.Looper
+import androidx.activity.viewModels
 import com.davidthar.quizapp.databinding.ActivityScoreBinding
-import com.davidthar.quizapp.model.QuizApp
-import com.davidthar.quizapp.model.database.RankingEntity
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
+import com.davidthar.quizapp.model.changeActivity
+import com.davidthar.quizapp.model.showToast
+import com.davidthar.quizapp.viewmodel.RankingViewModel
 
 private lateinit var binding : ActivityScoreBinding
 private var points = 0
 
 class ScoreActivity : AppCompatActivity() {
+
+    private val rankingViewModel : RankingViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityScoreBinding.inflate(layoutInflater)
@@ -23,7 +26,6 @@ class ScoreActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         points = bundle?.getInt("points")!!
-
         binding.tvScore.text = points.toString()
         initButton()
     }
@@ -31,24 +33,17 @@ class ScoreActivity : AppCompatActivity() {
     private fun initButton() {
         binding.buttonRanking.setOnClickListener{
             if (binding.etRankingName.text.isNotEmpty()){
-                doAsync {
-                    QuizApp.database.rankingDao().addToRanking(
-                        RankingEntity(name = binding.etRankingName.text.toString(),points = points))
-
-                    uiThread {
-                        println("Añadido: ${binding.etRankingName.text.toString()} con $points puntos")
-                        startRankingActivity()
-                    }
-                }
+                val name = binding.etRankingName.text.toString()
+                rankingViewModel.addScore(name, points)
+                Handler(Looper.getMainLooper()).postDelayed({ startRankingActivity() },1000)
             }else{
-                Toast.makeText(this,"Por favor, escribe un nombre",Toast.LENGTH_SHORT).show()
+                showToast("Por favor, escribe un nombre")
             }
         }
     }
 
     private fun startRankingActivity(){
-        val intent = Intent(this,RankingActivity::class.java)
-        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+        changeActivity(RankingActivity())
     }
 
     //Deactivate Back at this Activity

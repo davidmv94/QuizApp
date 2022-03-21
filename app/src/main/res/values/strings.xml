@@ -36,5 +36,9 @@
     <string name="your_name">Escribe tu nombre...</string>
 
 
-    <!---->
+    <!-- URI -->
+    <string name="my_github_uri">https://github.com/davidthar</string>
+    <string name="my_twitter_uri">https://twitter.com/DavidThar</string>
+    <string name="mouredev_github_uri">https://github.com/mouredev/Monthly-App-Challenge-2022</string>
+
 </resources>

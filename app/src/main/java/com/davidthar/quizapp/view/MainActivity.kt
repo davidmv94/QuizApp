@@ -1,10 +1,9 @@
 package com.davidthar.quizapp.view
 
-import android.app.ActivityOptions
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.davidthar.quizapp.databinding.ActivityMainBinding
+import com.davidthar.quizapp.model.changeActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,18 +19,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun initButtons() {
         binding.btnInformation.setOnClickListener {
-            val intent = Intent(this,InfoActivity::class.java)
-            startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+            changeActivity(InfoActivity())
         }
 
         binding.btnRanking.setOnClickListener {
-            val intent = Intent(this,RankingActivity::class.java)
-            startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+            changeActivity(RankingActivity())
         }
 
         binding.btnPlay.setOnClickListener {
-            val intent = Intent(this,QuizActivity::class.java)
-            startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+            changeActivity(QuizActivity())
         }
     }
 
