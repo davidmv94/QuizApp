@@ -89,15 +89,4 @@
         <item name="android:layout_marginEnd">30dp</item>
     </style>
 
-    <style name="linearlayout_ranking">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="divider_ranking">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
-        <item name="android:background">@color/text_color_darker</item>
-    </style>
-
 </resources>
