@@ -1,8 +1,12 @@
 # Harry Potter Quiz App
-Aplicacion #3 para el reto mensual de aplicaciones organizado por [MoureDev](https://github.com/mouredev)
+Aplicacion #3 en Android nativo con Kotlin para el reto mensual de aplicaciones organizado por [MoureDev](https://github.com/mouredev)
 
 ![Potter](https://raw.githubusercontent.com/davidthar/QuizApp/master/github_banner.png)
 
+## Tecnologías usadas
+* Android nativo con Kotlin
+* Arquitectura MVVM
+* Base de datos con Room
 
 ## Descarga de la aplicación
 Puedes descargar la aplicación en formato .apk desde ------------
@@ -10,7 +14,7 @@ Puedes descargar la aplicación en formato .apk desde ------------
 ## Información sobre el reto
 * Puedes encontrar más información sobre el reto [aquí](https://github.com/mouredev/Monthly-App-Challenge-2022)
 
-## Requisitos:
+### Requisitos:
 
 * El diseño es de libre elección.
 * La temática de las preguntas del cuestionario será de libre elección. Puede estar bien seguir un mismo tema (por ejemplo, preguntas sobre el universo "Harry Potter").
