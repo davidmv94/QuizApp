@@ -38,6 +38,8 @@
             android:id="@+id/etRankingName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:autofillHints="name"
             android:hint="@string/your_name"
             android:textColor="@color/text_color_darker"
             android:textColorHint="@color/text_color"
@@ -52,6 +54,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="20dp"
+            android:contentDescription="@string/next_arrow"
             android:background="@drawable/ic_baseline_arrow_forward_24"
             android:backgroundTint="@color/text_color_darker"/>
 

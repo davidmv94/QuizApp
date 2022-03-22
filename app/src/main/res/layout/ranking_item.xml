@@ -35,7 +35,7 @@
 
         <TextView
             android:id="@+id/tvName"
-            android:paddingStart="10dp"
+            android:layout_marginStart="10dp"
             android:textColor="@color/white"
             style="@style/ranking_names"
             app:layout_constraintStart_toEndOf="@id/tvPosition"
@@ -45,7 +45,7 @@
         <TextView
             android:id="@+id/tvPoints"
             style="@style/ranking_points"
-            android:paddingEnd="20dp"
+            android:layout_marginEnd="20dp"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

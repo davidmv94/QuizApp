@@ -1,16 +1,9 @@
 package com.davidthar.quizapp.model
 
-import android.app.Activity
-import android.app.ActivityOptions
 import android.app.Application
-import android.content.Intent
-import android.net.Uri
-import android.widget.Toast
 import androidx.room.Room
-import com.davidthar.quizapp.R
 import com.davidthar.quizapp.model.database.RankingDatabase
 import com.davidthar.quizapp.model.database.RankingEntity
-import com.davidthar.quizapp.view.RankingActivity
 import org.jetbrains.anko.doAsync
 
 /*
@@ -21,16 +14,17 @@ import org.jetbrains.anko.doAsync
 class QuizApp : Application() {
     companion object{
         lateinit var database : RankingDatabase
+        lateinit var ranking : MutableList<RankingEntity>
     }
 
     override fun onCreate() {
         super.onCreate()
-        var a = RankingActivity::class.java
 
         database = Room.databaseBuilder(this, RankingDatabase::class.java, "ranking_table").build()
 
         doAsync {
-            val ranking = database.rankingDao().getTenRanking()
+            ranking = database.rankingDao().getTenRanking()
+
             if(ranking.isEmpty()){
                 database.rankingDao().addToRanking(RankingEntity(name = "David", points = 270))
                 database.rankingDao().addToRanking(RankingEntity(name = "Tania", points = 240))
@@ -42,22 +36,8 @@ class QuizApp : Application() {
                 database.rankingDao().addToRanking(RankingEntity(name = "Lucía", points = 74))
                 database.rankingDao().addToRanking(RankingEntity(name = "Silvia", points = 55))
                 database.rankingDao().addToRanking(RankingEntity(name = "Alejandro", points = 14))
+                ranking = database.rankingDao().getTenRanking()
             }
         }
     }
-
-
-}
-//Extensions
-fun Activity.showToast(text : String, duration : Int = Toast.LENGTH_SHORT){
-    Toast.makeText(this, text, duration).show()
-}
-
-fun Activity.changeActivity(activity : Activity){
-    val intent = Intent(this, activity::class.java)
-    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
-}
-
-fun Activity.linkTo(uri : Int){
-    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(resources.getString(uri))))
 }

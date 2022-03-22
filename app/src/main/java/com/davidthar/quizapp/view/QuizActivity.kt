@@ -1,21 +1,22 @@
 package com.davidthar.quizapp.view
 
-import android.app.ActivityOptions
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.widget.Button
-import android.widget.Toast
 import com.davidthar.quizapp.R
 import com.davidthar.quizapp.databinding.ActivityQuizBinding
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.core.content.res.ResourcesCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.davidthar.quizapp.model.extensions.changeActivity
+import com.davidthar.quizapp.model.extensions.clear
+import com.davidthar.quizapp.model.extensions.correct
+import com.davidthar.quizapp.model.extensions.incorrect
 import com.davidthar.quizapp.viewmodel.QuizViewModel
 import java.text.DecimalFormat
 import java.text.NumberFormat
@@ -34,8 +35,6 @@ class QuizActivity : AppCompatActivity() {
     private var questionNumber = 1
     private var totalPoints = 0
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
@@ -46,14 +45,11 @@ class QuizActivity : AppCompatActivity() {
         arrayAnswerButtons = arrayOf(binding.btnAnswer1, binding.btnAnswer2, binding.btnAnswer3)
 
         loadFirstQuestion()
-
-        binding.btnBack.setOnClickListener {
-            this.onBackPressed()
-        }
+        initBackButton()
     }
 
     private fun loadFirstQuestion() {
-        quizViewModel.quizModel.observe(this, Observer {
+        quizViewModel.quizModel.observe(this, {
 
             //Load Image
             val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -84,48 +80,53 @@ class QuizActivity : AppCompatActivity() {
     private fun setCountDown(){
 
         timer = object : CountDownTimer(31000, 1000) {
+
             override fun onTick(millisUntilFinished: Long) {
                 val f: NumberFormat = DecimalFormat("00")
                 val sec = millisUntilFinished / 1000 % 60
                 binding.tvTimer.text = f.format(sec)
                 binding.progressBarCircle.progress = f.format(sec).toInt()
-
             }
 
             override fun onFinish() {
                 timer.cancel()
-                arrayAnswerButtons[correctAnswer-1].setBackgroundColor(resources.getColor(R.color.green_color))
-                arrayAnswerButtons[correctAnswer-1].setTextColor(resources.getColor(R.color.white))
+                arrayAnswerButtons[correctAnswer-1].setBackgroundColor(ResourcesCompat.getColor(resources,R.color.green_color,null))
+                arrayAnswerButtons[correctAnswer-1].setTextColor(ResourcesCompat.getColor(resources,R.color.white,null))
                 setDelay()
             }
         }
 
+        setAnswerButtons()
+
+        timer.start()
+    }
+
+    private fun setAnswerButtons(){
         arrayAnswerButtons.forEach { answerButton ->
             answerButton.setOnClickListener {
                 timer.cancel()
 
                 if(answerButton.tag.toString().toInt() == correctAnswer){
-                    answerButton.correct()
+                    totalPoints = answerButton.correct(totalPoints, binding.tvTimer)
                 }else{
-                    answerButton.incorrect()
+                    answerButton.incorrect(arrayAnswerButtons, correctAnswer)
                 }
 
                 //Unclickable until delay finishes
                 arrayAnswerButtons.forEach { it.setOnClickListener {  } }
 
+                //Start 1 second delay
                 setDelay()
             }
 
         }
-
-        timer.start()
     }
 
     private fun setDelay(){
         Handler(Looper.getMainLooper()).postDelayed(
             {
                 if(questionNumber == 10){
-                    startScoreActivity()
+                    changeActivity(ScoreActivity(),totalPoints)
                 }else{
                     quizViewModel.setQuestion(randomSet)
                     arrayAnswerButtons.forEach { it.clear() }
@@ -135,34 +136,10 @@ class QuizActivity : AppCompatActivity() {
             },1000)
     }
 
-    private fun startScoreActivity(){
-            val intent = Intent(this,ScoreActivity::class.java)
-            intent.putExtra("points",totalPoints)
-            println("Nuevo intent con $totalPoints puntos")
-            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
-    }
-
-    private fun Button.correct(){
-        this.setBackgroundColor(resources.getColor(R.color.green_color))
-        this.setTextColor(resources.getColor(R.color.white))
-        totalPoints += binding.tvTimer.text.toString().toInt()
-        println("Puntos totales: $totalPoints")
-    }
-
-    private fun Button.incorrect(){
-
-        //Incorrect to RED
-        this.setBackgroundColor(resources.getColor(R.color.red_color))
-        this.setTextColor(resources.getColor(R.color.white))
-
-        //Correct to GREEN
-        arrayAnswerButtons[correctAnswer-1].setBackgroundColor(resources.getColor(R.color.green_color))
-        arrayAnswerButtons[correctAnswer-1].setTextColor(resources.getColor(R.color.white))
-    }
-
-    private fun Button.clear(){
-        this.setBackgroundColor(resources.getColor(R.color.background_dark))
-        this.setTextColor(resources.getColor(R.color.text_color_darker))
+    private fun initBackButton() {
+        binding.btnBack.setOnClickListener {
+            this.onBackPressed()
+        }
     }
 
     override fun onBackPressed() {

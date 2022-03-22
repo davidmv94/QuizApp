@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.davidthar.quizapp.R
 import com.davidthar.quizapp.databinding.ActivityInfoBinding
-import com.davidthar.quizapp.model.linkTo
+import com.davidthar.quizapp.model.extensions.linkTo
 
 private lateinit var binding : ActivityInfoBinding
 

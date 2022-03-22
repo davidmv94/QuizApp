@@ -3,7 +3,7 @@ package com.davidthar.quizapp.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.davidthar.quizapp.databinding.ActivityMainBinding
-import com.davidthar.quizapp.model.changeActivity
+import com.davidthar.quizapp.model.extensions.changeActivity
 
 class MainActivity : AppCompatActivity() {
 

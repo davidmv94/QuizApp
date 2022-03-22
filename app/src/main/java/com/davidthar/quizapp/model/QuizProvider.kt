@@ -164,7 +164,7 @@ class QuizProvider {
                 correctAnswer = 2
             ),
             QuizModel(
-                question = "A que casa pertence Luna Lovegood?",
+                question = "A que casa pertenece Luna Lovegood?",
                 url = "https://i.ibb.co/5MMwCD0/19.jpg",
                 answer1 = "Ravenclaw",
                 answer2 = "Hufflepuff",

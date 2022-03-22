@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.davidthar.quizapp.R
 import com.davidthar.quizapp.model.database.RankingEntity
@@ -17,7 +16,7 @@ import com.davidthar.quizapp.model.database.RankingEntity
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
-    var ranking: MutableList<RankingEntity>  = ArrayList()
+    private var ranking: MutableList<RankingEntity>  = ArrayList()
     lateinit var context: Context
 
     fun RecyclerAdapter(ranking : MutableList<RankingEntity>, context: Context){
@@ -26,7 +25,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = ranking[position]
-        holder.bind(item, context, position)
+        holder.bind(item, position)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -41,7 +40,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         val name = view.findViewById(R.id.tvName) as TextView
         private val points = view.findViewById(R.id.tvPoints) as TextView
 
-        fun bind(ranking:RankingEntity, context : Context, positionNumber : Int){
+        fun bind(ranking:RankingEntity, positionNumber : Int){
             position.text = (positionNumber+1).toString()
             name.text = ranking.name
             points.text = ranking.points.toString()

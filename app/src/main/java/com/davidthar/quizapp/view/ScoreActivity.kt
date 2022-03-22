@@ -1,15 +1,13 @@
 package com.davidthar.quizapp.view
 
-import android.app.ActivityOptions
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.activity.viewModels
 import com.davidthar.quizapp.databinding.ActivityScoreBinding
-import com.davidthar.quizapp.model.changeActivity
-import com.davidthar.quizapp.model.showToast
+import com.davidthar.quizapp.model.extensions.changeActivity
+import com.davidthar.quizapp.model.extensions.showToast
 import com.davidthar.quizapp.viewmodel.RankingViewModel
 
 private lateinit var binding : ActivityScoreBinding
@@ -35,6 +33,7 @@ class ScoreActivity : AppCompatActivity() {
             if (binding.etRankingName.text.isNotEmpty()){
                 val name = binding.etRankingName.text.toString()
                 rankingViewModel.addScore(name, points)
+                rankingViewModel.updateRanking()
                 Handler(Looper.getMainLooper()).postDelayed({ startRankingActivity() },1000)
             }else{
                 showToast("Por favor, escribe un nombre")
