@@ -13,7 +13,7 @@ Aplicacion #3 en Android nativo con Kotlin para el reto mensual de aplicaciones 
 * Base de datos con Room
 
 ## Descarga de la aplicación
-Puedes descargar la aplicación en formato .apk desde ------------
+Puedes descargar la aplicación en formato .apk desde [aquí](https://github.com/davidthar/QuizApp/raw/master/app/release/quizapp_davidthar.apk)
 
 ## Información sobre el reto
 * Puedes encontrar más información sobre el reto [aquí](https://github.com/mouredev/Monthly-App-Challenge-2022)
