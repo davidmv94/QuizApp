@@ -3,8 +3,6 @@ Aplicacion #3 en Android nativo con Kotlin para el reto mensual de aplicaciones 
 
 ![Potter](https://raw.githubusercontent.com/davidthar/QuizApp/master/github_banner.png)
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/davidthar?style=social)](https://twitter.com/davidthar)
-
 ![GitHub Followers](https://img.shields.io/github/followers/davidthar?style=social)
 
 ## Tecnologías usadas
